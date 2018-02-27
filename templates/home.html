@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="{{ url_for('static',filename='styles/style.css') }}">
+  <script
+			  src="https://code.jquery.com/jquery-3.3.1.min.js"
+			  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+			  crossorigin="anonymous"></script>
+  <title>Niel Sentence Generator</title>
+</head>
+<body>
+  <canvas id="canvas"></canvas>
+  <div class="wrapper column">
+    <div class="header-container column">
+      <div class="header-text">
+        <h1>Neil Degrasse Sentence Generator</h1>
+      </div>
+      <div class="generate-button">
+      <h2>Generate</h2>
+      <!-- <select>
+        <option value="volvo">Volvo</option>
+        <option value="saab">Saab</option>
+        <option value="opel">Opel</option>
+        <option value="audi">Audi</option>
+      </select> -->
+      </div>
+    </div>
+    <div class="text-container">
+      {% if sentence %}
+       <p id="text">{{sentence}}</p>
+      {% endif %}
+    </div>
+    <div class="earth column">
+      <img id="person" src="{{ url_for('static',filename='assets/person-silhouette.png')}}" alt="">
+      <img id="ground" src="{{ url_for('static',filename='assets/Ellipse.png')}}" alt="">
+    </div>
+  </div>
+  <script type="text/javascript" src="{{ url_for('static',filename='scripts/script.js')}}"></script>
+  <script type="text/javascript" src="{{ url_for('static',filename='scripts/canvas.js')}}" charset="utf-8"></script>
+</body>
+</html>
